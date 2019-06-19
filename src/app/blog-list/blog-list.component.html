@@ -1,0 +1,15 @@
+<app-card>
+<p>
+  <a href = "#" (click) = "expandAll()">{{ expColl }}</a>
+</p>
+<p>
+  <a href="#" (click) = "toggleFavAll()">{{ favUnfav }}</a>
+</p>
+</app-card>
+<!-- <app-card>
+    <h1>Heading</h1>
+    <p>Para</p>
+</app-card> -->
+<app-blog-post-tile *ngFor="let postIter of blogPosts[currentPage]" [post] = "postIter" #tile></app-blog-post-tile>
+<app-paginator [numberOfPages] = "blogPosts.length" (pageNumberClick) = "updatePage($event)"></app-paginator>
+
